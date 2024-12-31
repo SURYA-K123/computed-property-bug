@@ -1,0 +1,14 @@
+<Input @type='text' id='new-item' @value={{this.newItem}} placeholder="Enter the item name"/>
+<button type='button' {{action 'addItem'}}>Add Item</button>
+
+<p>Length : {{this.data.length}}</p>
+
+<ul>
+  {{#if this.data.length}}
+    {{#each this.data.items as |item|}}
+      <li>{{#link-to 'items.view' item.id}} {{item.name}} {{/link-to}}</li>
+    {{/each}}
+  {{else}}
+    <p>Nothing to display!</p>
+  {{/if}}
+</ul>

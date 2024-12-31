@@ -1,0 +1,10 @@
+<h2>Item Details</h2>
+{{#if this.details}}
+  <div>
+    <h3>{{this.details.name}}</h3>
+    <p>{{this.details.description}}</p>
+    <button type="button" {{action "deleteItem" this.details.id}}>Delete</button>
+  </div>
+{{else}}
+  <p>Item not found.</p>
+{{/if}}
